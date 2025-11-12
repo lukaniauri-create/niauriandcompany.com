@@ -7,7 +7,6 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-/* VARIABLES */
 :root {
   --primary: linear-gradient(135deg, #1a4d7a, #4f9eda);
   --accent: #f5a623;
@@ -15,8 +14,6 @@
   --bg-dark: #0e1b2a;
   --card-bg: rgba(255,255,255,0.1);
   --hover-glow: 0 0 12px #f5a623;
-  --link-color: #f5a623;
-  --section-bg: rgba(255,255,255,0.05);
 }
 
 * { box-sizing: border-box; }
@@ -29,7 +26,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* LOADER */
 #loader {
   position: fixed;
   top: 0; left: 0;
@@ -50,36 +46,28 @@ body {
   animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
 #main-content { display: none; }
 
-/* HEADER */
 header { background: var(--primary); padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; flex-wrap: wrap; }
-
 .logo { font-size: 1.8rem; font-weight: 900; background: linear-gradient(90deg, #f5a623, #ffdd59); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 7px rgba(245,166,35,0.6); cursor: pointer; transform: translateZ(0); }
-
 nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
 nav ul li { cursor: pointer; font-weight: 700; color: var(--accent); transition: transform 0.3s; }
 nav ul li:hover, nav ul li.active { transform: scale(1.1); color: #fff; }
 .lang-switch button { margin-left: 10px; background: var(--accent); border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-weight: 700; color: var(--bg-dark); transition: transform 0.3s; }
 .lang-switch button:hover { transform: scale(1.1); }
 
-/* SECTIONS */
 section { padding: 80px 50px; display: flex; flex-wrap: wrap; gap: 50px; scroll-margin-top: 100px; }
 
-/* ABOUT / CONTACT */
 .about-section { display: flex; flex-wrap: wrap; align-items: center; gap: 50px; justify-content: space-between; }
 .about-text { flex: 1 1 300px; }
 .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--accent); }
 .about-text p { font-size: 1.1rem; margin: 8px 0; line-height: 1.6; }
-.languages-box { margin-top: 20px; padding: 15px 20px; border: 2px solid var(--accent); border-radius: 15px; background: var(--section-bg); }
+.languages-box { margin-top: 20px; padding: 15px 20px; border: 2px solid var(--accent); border-radius: 15px; background: rgba(255,255,255,0.05); }
 .languages-box h3 { margin-bottom: 10px; color: var(--accent); font-size: 1.3rem; }
 .languages-box p { margin:5px 0; font-size: 1.1rem; }
-.contact-box { margin-top: 30px; padding: 15px 20px; border: 2px solid var(--accent); border-radius: 15px; background: var(--section-bg); transition: box-shadow 0.3s; }
+.contact-box { margin-top: 30px; padding: 15px 20px; border: 2px solid var(--accent); border-radius: 15px; background: rgba(255,255,255,0.05); transition: box-shadow 0.3s ease; }
 .contact-box h3 { margin-bottom: 10px; color: var(--accent); font-size: 1.3rem; }
 .contact-box p { margin:5px 0; font-size:1.1rem; display:flex; align-items:center; }
 .contact-box img { width: 20px; margin-right:8px; }
@@ -87,43 +75,33 @@ section { padding: 80px 50px; display: flex; flex-wrap: wrap; gap: 50px; scroll-
 .about-image img { max-width:400px; border:5px solid var(--accent); border-radius:20px; box-shadow:0 0 35px rgba(245,166,35,0.7); transition: transform 0.3s; }
 .about-image img:hover { transform: scale(1.05); }
 
-/* SERVICES */
 .services-section { display:flex; flex-direction:column; gap:30px; }
-.services-section h2 { color: var(--accent); margin-bottom: 25px; } /* Services title yellow */
+.services-section h2 { color: var(--accent); } /* services title yellow */
 .service-card { background: var(--card-bg); padding: 25px; border-radius:20px; backdrop-filter: blur(10px); box-shadow:0 0 20px rgba(0,0,0,0.5); transition: transform 0.3s, box-shadow 0.3s; }
 .service-card:hover { transform: translateY(-10px); box-shadow: var(--hover-glow); }
 .service-card h3 { margin-top:0; color: var(--accent); }
-.services-images { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:30px; }
-.services-images img { width:300px; border:5px solid var(--accent); border-radius:20px; box-shadow:0 0 25px rgba(245,166,35,0.7); transition: transform 0.3s; }
-.services-images img:hover { transform: scale(1.05); }
 
-/* OTHER PAGES LINKS */
-.facebook-links { background: var(--section-bg); padding: 20px; border-radius:20px; display:flex; flex-direction: column; gap:10px; margin-top:30px; }
-.facebook-links h3 { color: var(--accent); margin-bottom: 15px; }
-.facebook-links ul { list-style: none; padding: 0; margin: 0; display:flex; flex-wrap:wrap; gap:15px; }
-.facebook-links ul li { margin-bottom: 10px; }
-.facebook-links ul li a { color: var(--link-color); text-decoration: none; font-weight: 600; transition: color 0.3s; }
-.facebook-links ul li a:hover { color: #fff; }
+.other-pages-section { padding:50px; border-radius:20px; background: rgba(255,255,255,0.05); }
+.other-pages-section h3 { color: var(--accent); margin-bottom:20px; font-size:1.5rem; }
+.other-pages-section ul { display:flex; flex-wrap:wrap; gap:15px; list-style:none; padding:0; margin:0; }
+.other-pages-section ul li a { color: #f5a623; text-decoration:none; font-weight:600; transition: color 0.3s; }
+.other-pages-section ul li a:hover { color:#fff; }
 
-/* FOOTER */
 footer { background: var(--primary); padding:30px; text-align:center; font-weight:700; font-size:1rem; }
 
-/* RESPONSIVE */
 @media (max-width:900px){
   .about-section { flex-direction:column; }
-  .services-images img { width:80%; }
-  .facebook-links ul { flex-direction: column; gap: 10px; }
+  .other-pages-section ul { flex-direction:column; gap:10px; }
 }
+
 </style>
 </head>
 <body>
 
-<!-- LOADER -->
 <div id="loader">
   <div class="spinner"></div>
 </div>
 
-<!-- MAIN WEBSITE CONTENT -->
 <div id="main-content">
 
 <header>
@@ -133,7 +111,7 @@ footer { background: var(--primary); padding:30px; text-align:center; font-weigh
       <li class="nav-link" id="nav-home-text" data-target="home">HOME</li>
       <li class="nav-link" id="nav-about-text" data-target="about">ABOUT</li>
       <li class="nav-link" id="nav-services-text" data-target="services">SERVICES</li>
-      <li id="nav-consult-text" onclick="highlightContact()">BOOK CONSULTATION</li>
+      <li id="nav-consult-text">BOOK CONSULTATION</li>
     </ul>
   </nav>
   <div class="lang-switch">
@@ -150,10 +128,10 @@ footer { background: var(--primary); padding:30px; text-align:center; font-weigh
       <h3 id="languages-title">Languages:</h3>
       <p id="about-languages">Georgian, English, Russian</p>
     </div>
-    <div class="contact-box" id="contact-box">
+    <div class="contact-box">
       <h3 id="contact-title">Contact:</h3>
-      <p id="about-email"><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email"> <span id="email-text">Email: Niauri.company@gmail.com</span></p>
-      <p id="about-phone"><img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" alt="Phone"> <span id="phone-text">Phone: +995 577 777 287</span></p>
+      <p id="about-email"><img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email"> Email: Niauri.company@gmail.com</p>
+      <p id="about-phone"><img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" alt="Phone"> Phone: +995 577 777 287</p>
     </div>
   </div>
   <div class="about-image">
@@ -181,59 +159,49 @@ footer { background: var(--primary); padding:30px; text-align:center; font-weigh
   </div>
 </section>
 
-<section class="facebook-links">
-  <h3 id="facebook-title">Other Pages:</h3>
+<section class="other-pages-section">
+  <h3>Other Pages:</h3>
   <ul>
     <li><a href="https://www.facebook.com/share/17boz5n9VS/" target="_blank">https://www.facebook.com/share/17boz5n9VS/</a></li>
     <li><a href="https://www.facebook.com/share/17VEoGfcxu/" target="_blank">https://www.facebook.com/share/17VEoGfcxu/</a></li>
     <li><a href="https://www.facebook.com/share/1BmGK6Ti7A/" target="_blank">https://www.facebook.com/share/1BmGK6Ti7A/</a></li>
-    <li><a href="https://www.freedom.org.ge" target="_blank">www.freedom.org.ge</a></li>
-    <li><a href="https://www.democracy.org.ge" target="_blank">www.democracy.org.ge</a></li>
+    <li><a href="https://www.freedom.org.ge" target="_blank">https://www.freedom.org.ge</a></li>
+    <li><a href="https://www.democracy.org.ge" target="_blank">https://www.democracy.org.ge</a></li>
   </ul>
 </section>
 
 <footer>
-  &copy; <span id="year"></span> <span id="footer-logo">Niauri&Company</span>
+  &copy; <span id="year"></span> Niauri&Company
 </footer>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-
-// LOADER
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.getElementById('loader').style.display = 'none';
-    document.getElementById('main-content').style.display = 'block';
-  }, 1000);
+  setTimeout(() => { document.getElementById('loader').style.display = 'none'; document.getElementById('main-content').style.display = 'block'; }, 1000);
 });
-
-// LOGO RELOAD
 function restartWebsite() { window.location.reload(); }
 
-// BOOK CONSULTATION HIGHLIGHT
-function highlightContact() {
-  const box = document.getElementById('contact-box');
-  box.style.boxShadow = '0 0 25px var(--accent)';
-  setTimeout(()=>{ box.style.boxShadow='0 0 0 rgba(0,0,0,0)'; }, 1500);
-}
+// Book Consultation button glow & scroll
+document.getElementById('nav-consult-text').addEventListener('click', () => {
+    const contactSection = document.querySelector('.contact-box');
+    contactSection.style.boxShadow = '0 0 25px #f5a623';
+    setTimeout(() => { contactSection.style.boxShadow = ''; }, 2000);
+    contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
 
-// NAVIGATION
+// Navigation
 document.getElementById('nav-home-text').addEventListener('click',()=>{ window.scrollTo({top:0, behavior:'smooth'}); });
 document.querySelectorAll('.nav-link').forEach(link=>{
   if(link.id!=='nav-home-text') link.addEventListener('click',()=>{ document.getElementById(link.dataset.target).scrollIntoView({behavior:'smooth'}); });
 });
 
-// LANGUAGE SWITCHER
+// Language switcher
 const translations = {
-  en: { "logo-text": "Niauri&Company","footer-logo": "Niauri&Company","nav-home-text": "HOME","nav-about-text": "ABOUT","nav-services-text": "SERVICES","nav-consult-text": "BOOK CONSULTATION","about-title": "ABOUT","about-text": "30 years of experience advising clients in government tenders and auctions. Focused on clear communication and practical solutions.","languages-title": "Languages:","about-languages": "Georgian, English, Russian","contact-title": "Contact:","email-text": "Email: Niauri.company@gmail.com","phone-text": "Phone: +995 577 777 287","services-title": "Services","service1-title": "Government Tenders / Auctions","service1-text": "Assisting clients with participation in public tenders and auctions, ensuring compliance and maximizing opportunities.","service2-title": "Legal Consultation","service2-text": "Providing professional advice in various legal matters including contracts, property, and business law.","service3-title": "Contract Negotiation","service3-text": "Expert support in negotiating contracts to secure favorable terms and mitigate risks.","service4-title": "Dispute Resolution","service4-text": "Helping clients resolve disputes efficiently through negotiation, mediation, or legal action if required","facebook-title": "Other Pages:"},
-  ru: { "logo-text": "Niauri&Company","footer-logo": "Niauri&Company","nav-home-text": "ГЛАВНАЯ","nav-about-text": "О НАС","nav-services-text": "УСЛУГИ","nav-consult-text": "ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ","about-title": "О НАС","about-text": "30 лет опыта консультирования клиентов по государственным тендерам и аукционам. Мы ориентированы на ясную коммуникацию и практические решения.","languages-title": "Языки:","about-languages": "Грузинский, Английский, Русский","contact-title": "Контакты:","email-text": "Эл. почта: Niauri.company@gmail.com","phone-text": "Телефон: +995 577 777 287","services-title": "Услуги","service1-title": "Государственные тендеры / Аукционы","service1-text": "Помощь клиентам в участии в государственных тендерах и аукционах, обеспечение соблюдения правил и максимизация возможностей.","service2-title": "Юридическая консультация","service2-text": "Профессиональные консультации по различным юридическим вопросам, включая контракты, собственность и бизнес-право.","service3-title": "Переговоры по контрактам","service3-text": "Экспертная поддержка в переговорах по контрактам для обеспечения выгодных условий и снижения рисков.","service4-title": "Разрешение споров","service4-text": "Помощь клиентам в эффективном разрешении споров через переговоры, медиацию или судебное вмешательство при необходимости","facebook-title": "Другие страницы:"}
+  en: { "logo-text": "Niauri&Company","footer-logo": "Niauri&Company","nav-home-text": "HOME","nav-about-text": "ABOUT","nav-services-text": "SERVICES","nav-consult-text": "BOOK CONSULTATION","about-title": "ABOUT","about-text": "30 years of experience advising clients in government tenders and auctions. Focused on clear communication and practical solutions.","languages-title": "Languages:","about-languages": "Georgian, English, Russian","contact-title": "Contact:","services-title": "Services","service1-title": "Government Tenders / Auctions","service1-text": "Assisting clients with participation in public tenders and auctions, ensuring compliance and maximizing opportunities.","service2-title": "Legal Consultation","service2-text": "Providing professional advice in various legal matters including contracts, property, and business law.","service3-title": "Contract Negotiation","service3-text": "Expert support in negotiating contracts to secure favorable terms and mitigate risks.","service4-title": "Dispute Resolution","service4-text": "Helping clients resolve disputes efficiently through negotiation, mediation, or legal action if required." },
+  ru: { "logo-text": "Niauri&Company","footer-logo": "Niauri&Company","nav-home-text": "ГЛАВНАЯ","nav-about-text": "О НАС","nav-services-text": "УСЛУГИ","nav-consult-text": "КОНСУЛЬТАЦИЯ","about-title": "О НАС","about-text": "30 лет опыта консультирования клиентов по государственным тендерам и аукционам. Мы ориентированы на ясную коммуникацию и практические решения.","languages-title": "Языки:","about-languages": "Грузинский, Английский, Русский","contact-title": "Контакты:","services-title": "Услуги","service1-title": "Государственные тендеры / Аукционы","service1-text": "Помощь клиентам в участии в государственных тендерах и аукционах, обеспечение соблюдения правил и максимизация возможностей.","service2-title": "Юридическая консультация","service2-text": "Профессиональные консультации по различным юридическим вопросам, включая контракты, собственность и бизнес-право.","service3-title": "Переговоры по контрактам","service3-text": "Экспертная поддержка в переговорах по контрактам для обеспечения выгодных условий и снижения рисков.","service4-title": "Разрешение споров","service4-text": "Помощь клиентам в эффективном разрешении споров через переговоры, медиацию или судебное вмешательство при необходимости." }
 };
 
-function changeLanguage(lang){
-  Object.keys(translations[lang]).forEach(id=>{
-    if(document.getElementById(id)) document.getElementById(id).textContent=translations[lang][id];
-  });
-}
+function changeLanguage(lang){ Object.keys(translations[lang]).forEach(id=>{ if(document.getElementById(id)) document.getElementById(id).textContent=translations[lang][id]; }); }
 </script>
 </body>
 </html>
